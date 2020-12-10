@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="383.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
+   <VBox layoutX="89.0" layoutY="93.0">
+      <children>
+         <Button fx:id="newWeldJob" mnemonicParsing="false" prefHeight="89.0" prefWidth="196.0" text="New Weld Job">
+            <font>
+               <Font size="22.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="5.0" />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="addWeldLog" mnemonicParsing="false" prefHeight="89.0" prefWidth="196.0" text="Open Weld Jobs">
+            <font>
+               <Font size="22.0" />
+            </font>
+         </Button>
+         <Button fx:id="allWeldJobs" mnemonicParsing="false" prefHeight="89.0" prefWidth="196.0" text="All Weld Jobs">
+            <font>
+               <Font size="22.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </Button>
+         <Button fx:id="login" mnemonicParsing="false" prefHeight="48.0" prefWidth="196.0" text="Login">
+            <font>
+               <Font size="22.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </Button>
+      </children>
+   </VBox>
+   <Label layoutX="94.0" layoutY="44.0" prefHeight="36.0" prefWidth="196.0" text="Weld Logger Pro v1.0">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+</AnchorPane>

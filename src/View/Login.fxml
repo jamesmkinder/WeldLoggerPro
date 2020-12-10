@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="220.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <VBox layoutX="5.0" layoutY="-60.0" prefHeight="139.0" prefWidth="131.0" AnchorPane.bottomAnchor="8.0"
+         AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+      <Label text="Username">
+         <padding>
+            <Insets bottom="10.0" left="5.0" top="5.0"/>
+         </padding>
+      </Label>
+      <TextField fx:id="username"/>
+      <Label text="Password">
+         <padding>
+            <Insets bottom="10.0" left="5.0" top="5.0"/>
+         </padding>
+      </Label>
+      <PasswordField fx:id="password" prefHeight="25.0" prefWidth="85.0"/>
+      <HBox>
+         <VBox.margin>
+            <Insets top="5.0"/>
+         </VBox.margin>
+         <Button fx:id="loginButton" mnemonicParsing="false" text="Sign In"/>
+         <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel">
+            <HBox.margin>
+               <Insets left="5.0"/>
+            </HBox.margin>
+         </Button>
+      </HBox>
+   </VBox>
+</AnchorPane>

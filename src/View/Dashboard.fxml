@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1131.0" prefWidth="1953.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashboardController">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="514.0" prefWidth="966.0">
+         <children>
+            <TableView fx:id="certContinuityTable" layoutX="501.0" layoutY="373.0" prefHeight="135.0" prefWidth="454.0">
+              <columns>
+                <TableColumn fx:id="clockNumWelderContinuity" prefWidth="157.0" text="Welder Clock #" />
+                <TableColumn fx:id="wmsWelderContinuity" prefWidth="152.0" text="WMS" />
+                  <TableColumn fx:id="mostRecentDate" editable="false" minWidth="0.0" prefWidth="144.0" text="Most Recent Job Date" />
+              </columns>
+            </TableView>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="646.0" text="Active Jobs" />
+                        <TextField fx:id="search" promptText="Search">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="15.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="weldJobsTable" prefHeight="171.0" prefWidth="871.0">
+                     <columns>
+                        <TableColumn fx:id="clockNum" prefWidth="136.0" text="Welder Clock #" />
+                        <TableColumn fx:id="size" prefWidth="136.0" text="Size" />
+                        <TableColumn fx:id="figNum" prefWidth="177.0" text="Fig #" />
+                        <TableColumn fx:id="fwo" prefWidth="138.0" text="FWO" />
+                        <TableColumn fx:id="rmc" prefWidth="141.0" text="RMC" />
+                        <TableColumn fx:id="qaprtNum" prefWidth="110.0" text="QAP-RT #" />
+                        <TableColumn fx:id="ended" prefWidth="125.0" text="Ended" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <Label prefHeight="17.0" prefWidth="646.0" text="Associated Logs" />
+                  <TableView fx:id="weldLogTable" prefHeight="145.0" prefWidth="964.0">
+                     <columns>
+                        <TableColumn fx:id="wms" prefWidth="49.0" text="WMS" />
+                        <TableColumn fx:id="rev" prefWidth="42.0" text="Rev" />
+                        <TableColumn fx:id="machNum" prefWidth="69.0" text="Mach No." />
+                        <TableColumn fx:id="sizeAndType" prefWidth="103.0" text="Filler Size &amp; Type" />
+                        <TableColumn fx:id="heatAndLot" prefWidth="122.0" text="Filler Heat &amp;/or Lot" />
+                        <TableColumn fx:id="noOut" prefWidth="53.0" text="No. Out" />
+                        <TableColumn fx:id="noIn" prefWidth="56.0" text="No. In" />
+                        <TableColumn fx:id="stubs" prefWidth="42.0" text="Stubs" />
+                        <TableColumn fx:id="timeOut" prefWidth="64.0" text="Time Out" />
+                        <TableColumn fx:id="timeIn" prefWidth="65.0" text="Time In" />
+                        <TableColumn fx:id="qualificationNum" prefWidth="152.0" text="Qualification Number" />
+                        <TableColumn fx:id="qualificationExpDate" prefWidth="146.0" text="Qualification Exp. Date" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="10.0" layoutY="216.0" prefHeight="17.0" prefWidth="646.0" text="Associated Parts" />
+               </children>
+            </VBox>
+            <Button fx:id="editWeldJob" layoutX="386.0" layoutY="389.0" mnemonicParsing="false" text="Edit Weld Job" />
+            <Button fx:id="deleteWeldJob" layoutX="386.0" layoutY="427.0" mnemonicParsing="false" text="Delete Weld Job" />
+            <TableView fx:id="partsTable" layoutY="385.0" prefHeight="135.0" prefWidth="375.0">
+               <columns>
+                  <TableColumn fx:id="partNameCol" editable="false" prefWidth="84.0" text="Part Name" />
+                  <TableColumn fx:id="heatNumCol" editable="false" prefWidth="87.0" text="Heat Number" />
+                  <TableColumn fx:id="serialNumCol" editable="false" prefWidth="109.0" text="Serial Number" />
+                  <TableColumn fx:id="wmsCol" editable="false" prefWidth="94.0" text="WMS Process" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Button fx:id="logOut" layoutX="1863.0" layoutY="1071.0" mnemonicParsing="false" text="Log Out" />
+      <LineChart fx:id="fpyChart" layoutX="1061.0" layoutY="51.0" prefHeight="414.0" prefWidth="802.0" title="YTD First Pass Yield">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <ComboBox fx:id="welderClockNum" layoutX="1106.0" layoutY="465.0" prefWidth="150.0" promptText="(Select Welder ID)" />
+      <ComboBox fx:id="material" layoutX="1265.0" layoutY="465.0" prefWidth="150.0" promptText="(Select Material)" />
+      <ComboBox fx:id="department" layoutX="1424.0" layoutY="465.0" prefWidth="150.0" promptText="(Select Department)" />
+      <LineChart fx:id="logisticChart" layoutX="55.0" layoutY="554.0" prefHeight="414.0" prefWidth="802.0" title="Logistic Regression Model">
+         <xAxis>
+            <CategoryAxis fx:id="reworkAxis" side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="passFailAxis" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <PieChart fx:id="pieChart" layoutX="1023.0" layoutY="554.0" prefHeight="414.0" prefWidth="802.0" title="Breakdown of Rejected Jobs" />
+      <ComboBox fx:id="category" layoutX="1106.0" layoutY="997.0" prefWidth="150.0" promptText="(Select Category)" />
+   </children>
+</AnchorPane>

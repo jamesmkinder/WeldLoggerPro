@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="1118.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LeadDashboardController">
+   <children>
+      <VBox layoutX="14.0" layoutY="60.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="646.0" text="Jobs With Unchecked Logs" />
+                  <TextField fx:id="search" promptText="Search">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TableView fx:id="weldJobsTable" prefHeight="171.0" prefWidth="871.0">
+               <columns>
+                  <TableColumn fx:id="clockNum" prefWidth="136.0" text="Welder Clock #" />
+                  <TableColumn fx:id="size" prefWidth="136.0" text="Size" />
+                  <TableColumn fx:id="figNum" prefWidth="177.0" text="Fig #" />
+                  <TableColumn fx:id="fwo" prefWidth="138.0" text="FWO" />
+                  <TableColumn fx:id="rmc" prefWidth="141.0" text="RMC" />
+                  <TableColumn fx:id="qaprtNum" prefWidth="110.0" text="QAP-RT #" />
+                  <TableColumn fx:id="ended" prefWidth="125.0" text="Ended" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TableView>
+            <Label prefHeight="17.0" prefWidth="646.0" text="Associated Unchecked Logs" />
+            <TableView fx:id="weldLogTable" prefHeight="141.0" prefWidth="964.0">
+               <columns>
+                  <TableColumn fx:id="wms" prefWidth="49.0" text="WMS" />
+                  <TableColumn fx:id="rev" prefWidth="42.0" text="Rev" />
+                  <TableColumn fx:id="machNum" prefWidth="69.0" text="Mach No." />
+                  <TableColumn fx:id="sizeAndType" prefWidth="103.0" text="Filler Size &amp; Type" />
+                  <TableColumn fx:id="heatAndLot" prefWidth="122.0" text="Filler Heat &amp;/or Lot" />
+                  <TableColumn fx:id="noOut" prefWidth="53.0" text="No. Out" />
+                  <TableColumn fx:id="noIn" prefWidth="56.0" text="No. In" />
+                  <TableColumn fx:id="stubs" prefWidth="42.0" text="Stubs" />
+                  <TableColumn fx:id="timeOut" prefWidth="64.0" text="Time Out" />
+                  <TableColumn fx:id="timeIn" prefWidth="65.0" text="Time In" />
+                  <TableColumn fx:id="qualificationNum" prefWidth="152.0" text="Qualification Number" />
+                  <TableColumn fx:id="qualificationExpDate" prefWidth="146.0" text="Qualification Exp. Date" />
+               </columns>
+            </TableView>
+            <Label layoutX="10.0" layoutY="216.0" prefHeight="17.0" prefWidth="646.0" text="Associated Parts" />
+         </children>
+      </VBox>
+      <Button fx:id="back" layoutX="1012.0" layoutY="531.0" mnemonicParsing="false" text="Back" />
+      <TableView fx:id="partsTable" layoutX="14.0" layoutY="442.0" prefHeight="171.0" prefWidth="370.0">
+         <columns>
+            <TableColumn fx:id="partNameCol" editable="false" prefWidth="84.0" text="Part Name" />
+            <TableColumn fx:id="heatNumCol" editable="false" prefWidth="87.0" text="Heat Number" />
+            <TableColumn fx:id="serialNumCol" editable="false" prefWidth="109.0" text="Serial Number" />
+            <TableColumn fx:id="wmsCol" editable="false" prefWidth="94.0" text="WMS Process" />
+         </columns>
+      </TableView>
+      <Button fx:id="approveLog" layoutX="432.0" layoutY="468.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="237.0" text="Approve Selected Log">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
